@@ -1,0 +1,10 @@
+.pure-tabs-trigger[data-active="true"] {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.pure-tabs-content {
+  display: none;
+}
+.pure-tabs-content[data-active="true"] {
+  display: block;
+}

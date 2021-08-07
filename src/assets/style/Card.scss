@@ -1,0 +1,102 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+  padding: var(--card-py) var(--card-px);
+  transition: all 0.2s ease-in-out;
+  border-width: 1px;
+  border-color: transparent;
+
+  --card-bg: var(--muted);
+}
+
+.card:hover,
+.card:focus {
+  background-color: hsl(var(--card-bg));
+}
+
+.card-hover-show {
+  opacity: 0;
+}
+
+.card:hover .card-hover-show {
+  opacity: 1;
+}
+
+.card > .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin-right: var(--card-px);
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0px;
+}
+
+.card .card-right-container {
+  position: absolute;
+  right: 8px;
+  top: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.card .card-right-before {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 100%;
+  width: 32px;
+  transition: all 0.2s ease-in-out;
+
+  background: linear-gradient(
+    -90deg,
+    hsl(var(--card-bg)) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.card .card-right-before {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 100%;
+  width: 32px;
+  transition: all 0.2s ease-in-out;
+
+  background: linear-gradient(
+    -90deg,
+    hsl(var(--card-bg)) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.card .card-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+  background: hsl(var(--card-bg));
+  background: transparent;
+}
+
+.card .card-title {
+  @apply text-sm truncate min-w-0 flex-1;
+}
+
+.card .card-description {
+  @apply text-xs truncate min-w-0 flex-1 text-muted-foreground;
+}

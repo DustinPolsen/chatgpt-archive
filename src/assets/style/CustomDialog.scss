@@ -1,0 +1,47 @@
+@keyframes sp-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--closed-y-offset))
+      translateX(var(--closed-x-offset)) scale(var(--closed-scale));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(var(--open-y-offset)) translateX(var(--open-x-offset))
+      scale(var(--open-scale));
+  }
+}
+
+@keyframes sp-leave {
+  0% {
+    opacity: 1;
+    transform: translateY(var(--open-y-offset)) translateX(var(--open-x-offset))
+      scale(var(--open-scale));
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(var(--closed-y-offset))
+      translateX(var(--closed-x-offset)) scale(var(--closed-scale));
+  }
+}
+
+.custom-dialog {
+  display: none;
+  --timing-function: ease-in-out;
+  --open-y-offset: 20vh;
+  --closed-y-offset: 21vh;
+  --open-x-offset: 0px;
+  --closed-x-offset: 0px;
+  --open-scale: 1;
+  --closed-scale: 1;
+  --duration: 0.2s;
+}
+
+.custom-dialog[data-state="open"] {
+  animation: sp-enter var(--duration) var(--timing-function) forwards;
+  display: block;
+}
+
+.custom-dialog[data-state="closed"] {
+  animation: sp-leave var(--duration) var(--timing-function) forwards;
+  display: block;
+}

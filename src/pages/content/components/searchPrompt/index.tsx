@@ -1,0 +1,1 @@
+export { SearchPrompt } from "./SearchPrompt";

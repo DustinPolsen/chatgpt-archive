@@ -1,0 +1,65 @@
+.thumb {
+  --thumb-hover-radius: calc(var(--radius) + 6px);
+  --thumb-width: 50px;
+  --thumb-width-hover: 60px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 80px;
+  right: 0px;
+  left: auto;
+  border-radius: var(--radius) 0px 0px var(--radius);
+  transition-property: background-color, border-radius;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  // overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.thumb[data-side="left"] {
+  right: auto;
+  left: 0px;
+  border-radius: 0px var(--radius) var(--radius) 0px;
+}
+
+.thumb[data-side="left"]:hover {
+  border-radius: 0px var(--thumb-hover-radius) var(--thumb-hover-radius) 0px;
+}
+
+.thumb[data-side="left"][data-state="hidden"] {
+  transform: translateX(-100%);
+}
+
+.thumb:hover {
+  border-radius: var(--thumb-hover-radius) 0px 0px var(--thumb-hover-radius);
+}
+
+.thumb[data-state="show"] {
+  transform: translateX(0px);
+}
+
+.thumb[data-state="hidden"] {
+  transform: translateX(100%);
+}
+
+.thumb[data-drag-state="dragging"],
+.thumb[data-state="left"][data-drag-state="dragging"] {
+  border-radius: 25px !important;
+}
+
+.thumb .thumb-item {
+  width: var(--thumb-width);
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border-radius: var(--radius) 0px 0px var(--radius);
+}
+.thumb[data-side="left"] .thumb-item {
+  border-radius: 0px var(--radius) var(--radius) 0px;
+}

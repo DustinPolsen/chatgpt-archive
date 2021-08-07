@@ -1,0 +1,48 @@
+#panel {
+  right: 0px;
+  --closed-x-offset: 25% !important;
+}
+
+.thumb[data-side="left"] ~ #panel {
+  right: auto;
+  left: 0px;
+  --closed-x-offset: -25% !important;
+}
+
+#panel[data-state="open"] {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex !important;
+}
+
+#panel[data-state="closed"] {
+  display: flex !important;
+}
+
+.side-toggle-main-window {
+  transition: all 0.2s ease-out;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.side-toggle-main-window.side-open {
+  right: 400px;
+}
+
+#panel .con-list {
+  overflow-y: auto;
+}
+
+#panel .con-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+#panel .con-list::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+
+#panel:hover .con-list::-webkit-scrollbar-thumb {
+  visibility: visible;
+}

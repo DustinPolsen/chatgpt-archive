@@ -1,0 +1,18 @@
+.search-prompt [cmdk-item] {
+  border-radius: var(--radius);
+}
+
+.search-prompt [cmdk-list] {
+  padding-left: 8px;
+  padding-right: 8px;
+  margin: 0px;
+}
+
+.search-prompt [cmdk-group-heading] {
+  margin-left: 16px;
+}
+
+.search-prompt [cmdk-group] {
+  padding-left: 0px;
+  padding-right: 0px;
+}

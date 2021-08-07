@@ -1,0 +1,65 @@
+@import "@assets/style/theme.scss";
+@import "./styles/BottomNavBar.scss";
+@import "./styles/Panel.scss";
+@import "./styles/Pill.scss";
+@import "./styles/SearchPrompt.scss";
+@import "./styles/Thumb.scss";
+
+.con-item {
+  border-radius: 12px;
+}
+
+.con-item {
+  background-color: var(--bg-main);
+}
+
+// con-list
+
+mark.chatgpt-archive-highlight {
+  color: white;
+  background-color: green;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+// checkbox
+
+.checkbox-container {
+  cursor: pointer;
+  --color-checkmark: #059669;
+  --color-bg: #fff;
+}
+
+.checkbox-container input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-container label {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.checkbox-container label>.checkmark {
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  background-color: var(--color-bg);
+  border-radius: 8px;
+  border: none;
+  color: transparent;
+  transition: all 0.2s ease-out;
+}
+
+.checkbox-container input[type="checkbox"]:checked+label>.checkmark {
+  transform: scale(0.9);
+  background-color: var(--color-checkmark);
+  border: none;
+  color: var(--color-bg);
+}

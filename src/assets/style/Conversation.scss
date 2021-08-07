@@ -1,0 +1,40 @@
+.conversation {
+  --card-py: 8px;
+  @apply hover:bg-muted;
+}
+
+.conversation:hover .card-right {
+  @apply bg-muted;
+}
+
+.conversation:hover .card-right-before {
+  @apply bg-gradient-to-r from-transparent to-muted;
+}
+
+.conversation[data-pin="true"] {
+  @apply hover:bg-primary-200 border-primary-400 dark:hover:bg-primary-800 dark:border-primary-500;
+}
+
+.conversation[data-pin="true"]:hover .card-right {
+  @apply bg-primary-200 dark:bg-primary-800;
+}
+
+.conversation[data-active="true"] {
+  @apply bg-primary-100 hover:bg-primary-200 dark:bg-primary-900 dark:hover:bg-primary-800;
+}
+
+.conversation[data-active="true"]:hover .card-right {
+  @apply bg-primary-200 dark:bg-primary-800;
+}
+
+.conversation {
+  cursor: pointer;
+}
+
+.conversation[data-active="true"]:hover .card-right-before {
+  @apply bg-gradient-to-r from-transparent to-primary-200 dark:to-primary-800;
+}
+
+.conversation[data-pin="true"]:hover .card-right-before {
+  @apply bg-gradient-to-r from-transparent to-primary-200 dark:to-primary-800;
+}
